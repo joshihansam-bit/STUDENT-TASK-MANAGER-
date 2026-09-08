@@ -12,9 +12,9 @@
     </parent>
 
     <groupId>com.studenttasks</groupId>
-    <artifactId>student-task-manager</artifactId>
+    <artifactId>student-task-manager2</artifactId>
     <version>1.0.0</version>
-    <name>student-task-manager</name>
+    <name>student-task-manager2</name>
     <description>Modern Full-Stack Student Task Manager for College Students</description>
 
     <properties>

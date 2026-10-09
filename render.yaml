@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: student-task-manager
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: student-task-db
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: student-task-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: student-task-db
+          property: password
+
+databases:
+  - name: student-task-db
+    plan: free
+    databaseName: student_task_db
+    user: student_user
